@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表白</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .heart {
+            color: red;
+            font-size: 5em;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+        }
+        .message {
+            display: none;
+            margin-top: 40px;
+            font-size: 2em;
+        }
+        .long-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.5em;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">❤️</div>
+        <button id="confessButton" onclick="showMessage()">点击我</button>
+        <div class="message" id="message">❤️韩缯旭❤️</div>
+        <div class="long-message" id="longMessage">
+            无法用言语表达咱们两个兄弟感情。你就像我的阳光，让我的世界变得温暖和明亮。无论未来有多艰难，我都会一直在你身边，支持你，爱护你，谢谢你我的好兄弟
+        </div>
+        <audio id="backgroundMusic" src="https://www.kuwo.cn/play_detail/23534035" type="audio/mp3"></audio>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+            document.getElementById('longMessage').style.display = 'block';
+            document.getElementById('confessButton').style.display = 'none';
+            document.getElementById('backgroundMusic').play();
+        }
+    </script>
+</body>
+</html>

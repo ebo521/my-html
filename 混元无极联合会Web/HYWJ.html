@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>混元无极联合会</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: url('header-background.jpg') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px;
+        }
+        .content div {
+            flex: 1;
+            margin: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>混元无极联合会</h1>
+    <p>弘扬中国传统文化，促进文化交流与发展</p>
+</header>
+
+<nav>
+    <a href="#home">首页</a>
+    <a href="#about">关于我们</a>
+    <a href="#events">活动</a>
+    <a href="#contact">联系我们</a>
+</nav>
+
+<div class="container">
+    <section id="home">
+        <h2 class="section-title">首页</h2>
+        <div class="content">
+            <div>
+                <h3>命理学</h3>
+                <p>了解古老的命理学，探索人生的奥秘。</p>
+                <img src="minglixue.jpg" alt="命理学">
+            </div>
+            <div>
+                <h3>玄学</h3>
+                <p>探索玄学的深奥智慧，感受天地之道。</p>
+                <img src="xuanxue.jpg" alt="玄学">
+            </div>
+            <div>
+                <h3>音乐</h3>
+                <p>欣赏传统音乐，体验心灵的宁静与美好。</p>
+                <img src="yinyue.jpg" alt="音乐">
+            </div>
+            <div>
+                <h3>绘画</h3>
+                <p>学习传统绘画技艺，感受艺术的魅力。</p>
+                <img src="huahua.jpg" alt="绘画">
+            </div>
+            <div>
+                <h3>读书交流</h3>
+                <p>参加读书交流活动，共享知识与智慧。</p>
+                <img src="dushu.jpg" alt="读书交流">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">关于我们</h2>
+        <p>混元无极联合会致力于弘扬中国传统文化，促进文化交流与发展。我们组织各类文化活动和培训，提升会员的综合素质和文化修养。</p>
+    </section>
+
+    <section id="events">
+        <h2 class="section-title">活动</h2>
+        <p>我们定期举办各种文化活动，包括命理学讲座、玄学研讨会、音乐会、绘画展览和读书交流活动。</p>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">联系我们</h2>
+        <p>地址：北京市东城区某某街道123号</p>
+        <p>电话：010-12345678</p>
+        <p>邮箱：info@hunyuansociety.cn</p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 混元无极联合会. 版权所有.</p>
+</footer>
+
+<script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+
+</body>
+</html>

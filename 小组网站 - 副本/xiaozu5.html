@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G105第五小组</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInFromTop {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        @keyframes scaleUp {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes zoomEffect {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #f0f0f0; /* 调整字体颜色为浅色 */
+            font-weight: bold; /* 所有字体加粗 */
+            animation: fadeIn 1s ease-in-out;
+        }
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6); /* 调整背景透明度以增强对比度 */
+            color: white;
+            position: relative;
+            animation: slideInFromTop 1s ease-in-out;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+            animation: scaleUp 1s ease-in-out;
+        }
+        .container {
+            padding: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .group-intro {
+            margin: 20px 0;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        .member {
+            background: rgba(0, 0, 0, 0.8); /* 调整背景为黑色透明 */
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 3s ease-in-out;
+            transition: transform 0.3s ease;
+            color: #f0f0f0; /* 调整字体颜色为浅色 */
+            font-weight: bold; /* 字体加粗 */
+        }
+        .member:hover {
+            transform: scale(1.05);
+        }
+        .member h3 {
+            margin: 0;
+        }
+        .member a {
+            color: #f0f0f0; /* 调整字体颜色为浅色 */
+            text-decoration: none;
+        }
+        .member a:hover {
+            text-decoration: underline;
+        }
+        .slogan {
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #ff6347;
+            animation: fadeIn 3.5s ease-in-out;
+        }
+        .photo-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .photo-section img {
+            width: 250px;
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .photo-section img:hover {
+            transform: scale(1.1);
+            animation: zoomEffect 0.3s ease-in-out forwards;
+        }
+        .photo-section p {
+            text-align: center;
+            font-weight: bold;
+            color: #f0f0f0; /* 调整字体颜色为浅色 */
+            margin-top: 10px;
+        }
+        @media (max-width: 600px) {
+            .photo-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .photo-section img {
+                margin-bottom: 20px;
+            }
+        }
+        .photo-text {
+            max-width: 300px;
+            margin-left: 20px;
+            font-size: 1em;
+            color: #f0f0f0; /* 调整字体颜色为浅色 */
+            font-weight: bold; /* 字体加粗 */
+        }
+        .photo-section div {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .music-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            font-weight: bold; /* 字体加粗 */
+        }
+        .music-button:hover {
+            transform: scale(1.1);
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.6); /* 调整背景透明度以增强对比度 */
+            color: white;
+            font-weight: bold; /* 字体加粗 */
+            animation: slideUp 1s ease-in-out;
+        }
+        .footer img {
+            width: 100px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <video class="background-video" autoplay muted loop>
+        <source src="https://videos.pexels.com/video-files/6804117/6804117-uhd_2732_1440_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="header">
+        <h1>G105第五小组</h1>
+        <button class="music-button" onclick="toggleMusic()">
+            🎵
+        </button>
+    </div>
+    <div class="container">
+        <div class="group-intro">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="slogan">
+            <p></p>
+        </div>
+        <div class="photo-section">
+            <div>
+                <a href="http://www.liangzhiedu.com/" target="_blank">
+                    <img src="https://s2.loli.net/2024/07/08/7utgoIL9YG1wfPH.jpg" alt="Teacher">
+                </a>
+                <p>教员：宿泽林</p>
+                <div class="photo-text">
+                    <p>宿泽林是一位经验丰富的教员，精通数据库，Linux系统服务的部署与维护 精通Docker和kubernetes容器技术，多年授课经验。秉持“知识改变命运”的信念，致力于培养学生的创新能力和实践技能。</p>
+                </div>
+            </div>
+            <div>
+                <a href="http://www.liangzhiedu.com/" target="_blank">
+                    <img src="http://www.liangzhiedu.com/images/szaj.jpg" alt="Class Supervisor">
+                </a>
+                <p>班主任：安娇</p>
+                <div class="photo-text">
+                    <p>安娇老师是班主任，拥有丰富的教学管理经验。她注重学生的全面发展，关心每一个学生的成长与进步。</p>
+                </div>
+            </div>
+        </div>
+        <div class="members">
+            <h2>小组成员</h2>
+            <div class="member">
+                <h3><a href="https://mp.weixin.qq.com/s/g8YdasLs-bSfCRVrDUqKDw">赵艺博</a></h3>
+                <p>励志名言：圣人之道，吾性自足，不假外求。</p>
+            </div>
+            <div class="member">
+                <h3><a href="https://mp.weixin.qq.com/s/OR_UwCF0QK0jOgSVIu0lbw">和凯顺</a></h3>
+                <p>励志名言：立志用功如种树然，方其根芽，犹未有干;及其有干，尚未有枝;枝而后叶，叶而后花。</p>
+            </div>
+            <div class="member">
+                <h3><a href="https://mp.weixin.qq.com/s/Av7U6rwgbt0tN13W5C5UkQ">张炳辰</a></h3>
+                <p>励志名言：在人生的旅途中，一定要学会自己拯救自己，这样才能在逆境中奋勇前行。</p>
+            </div>
+            <div class="member">
+                <h3><a href="https://mp.weixin.qq.com/s/2gp5j5SeuZ8Dxq2AEvpc4Q">张占拴</a></h3>
+                <p>励志名言：回头看轻舟已过万重山，生活没有过不去的坎，希望大家努力生活。</p>
+            </div>
+            <div class="member">
+                <h3><a href="https://mp.weixin.qq.com/s/CoiHmpEmsL-ew0YKM5_LhA">刘建库</a></h3>
+                <p>励志名言：成功源于不懈的努力，而非一时的才华。</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>This webpage is produced by ebo. Please contact me: 1831289611@qq.com</p>
+        <img src="https://s2.loli.net/2024/07/08/sEVNQPCL7lpmonR.jpg" alt="QR Code">
+    </div>
+
+    <audio id="background-music" src="http://ws.stream.qqmusic.qq.com/C400003xkBBI156Hg2.m4a?guid=480480468&vkey=85F53AE3FE3B22E150F7FEF0B6C9660C7808820D7A5323D293E21A32777879F200E1828D9DB85895E287BE5D0EDD8C3B09D429364039B821&uin=&fromtag=120032" loop></audio>
+
+    <script>
+        function toggleMusic() {
+            var music = document.getElementById('background-music');
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+    </script>
+</body>
+</html>
